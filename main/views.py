@@ -1,21 +1,21 @@
-from flask import render_template, redirect, url_for
-from flask_login import login_required, current_user
-
+from flask import render_template,request,redirect,url_for,abort
 from . import main
-from .forms import PostForm, CommentForm, UpdateProfile
-from ..models import Post, Comment, User, Upvote, Downvote
-from .. import db 
+from ..models import User,Pitch,Comment
+from .. import db,photos
+from .forms import UpdateProfile,PitchForm,CommentForm
+from flask_login import login_required,current_user
+import datetime
 
-
-
+# Views
 @main.route('/')
 def index():
-    posts = Post.query.all()
-    product = Post.query.filter_by(category='product').all()
-    idea = Post.query.filter_by(category='idea').all()
-    business = Post.query.filter_by(category='Business').all()
-    return render_template('index.html', business=business, product=product, idea=idea, posts=posts)
 
+    interview_piches = Pitch.get_pitches('interview')
+    product_piches = Pitch.get_pitches('product')
+    promotion_pitches = Pitch.get_pitches('promotion')
+
+
+    return render_template('index.html',title = title, interview = interview_piches, product = product_piches, promotion = promotion_pitches)
 
 
 @main.route('/posts')
