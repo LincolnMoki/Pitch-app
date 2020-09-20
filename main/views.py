@@ -16,3 +16,13 @@ def index():
     business = Post.query.filter_by(category='Business').all()
     return render_template('index.html', business=business, product=product, idea=idea, posts=posts)
 
+
+
+@main.route('/posts')
+@login_required
+def posts():
+    posts = Post.query.all()
+    likes = Upvote.query.all()
+    user = current_user
+    return render_template('pitch_display.html', posts=posts, likes=likes, user=user)
+
