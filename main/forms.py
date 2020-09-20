@@ -9,3 +9,7 @@ class PostForm(FlaskForm):
     category = SelectField('Category', choices=[('product', 'product'), ('idea', 'idea'), ('business', 'business')],
                            validators=[Required()])
     submit = SubmitField('Post')
+
+class CommentForm(FlaskForm):
+    comment = TextAreaField('Comment', validators=[Required()])
+    submit = SubmitField('Post')
