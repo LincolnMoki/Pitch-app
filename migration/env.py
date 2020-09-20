@@ -19,3 +19,19 @@ config.set_main_option(
         'SQLALCHEMY_DATABASE_URI').replace('%', '%%'))
 target_metadata = current_app.extensions['migrate'].db.metadata
 
+
+
+def run_migrations_offline():
+    """
+
+    Calls to context.execute() here emit the given string to the
+    script output.
+
+    """
+    url = config.get_main_option("sqlalchemy.url")
+    context.configure(
+        url=url, target_metadata=target_metadata, literal_binds=True
+    )
+
+    with context.begin_transaction():
+        context.run_migrations()
