@@ -17,3 +17,8 @@ class CommentForm(FlaskForm):
 
 class Vote(FlaskForm):
     submit = SelectField('Like')
+
+
+class UpdateProfile(FlaskForm):
+    bio = TextAreaField('Tell us about you', validators=[Required()])
+    submit = SubmitField('Post')
