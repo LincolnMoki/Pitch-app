@@ -29,16 +29,23 @@ def profile(uname):
 
     return render_template("profile/profile.html", user = user,pitches = pitches_count,date = user_joined)
 
-@main.route('/new_post', methods=['GET', 'POST'])
+
+
+@main.route('/user/<uname>/update',methods = ['GET','POST'])
 @login_required
-def new_post():
-    form = PostForm()
+def update_profile(uname):
+    user = User.query.filter_by(username = uname).first()
+    if user is None:
+        abort(404)
+
+    form = UpdateProfile()
+
     if form.validate_on_submit():
-        title = form.title.data
-        post = form.post.data
-        category = form.category.data
-        user_id = current_user._get_current_object().id
-        post_obj = Post(post=post, title=title, category=category, user_id=user_id)
-        post_obj.save()
-        return redirect(url_for('main.index'))
-    return render_template('pitch.html', form=form)
+        user.bio = form.bio.data
+
+        db.session.add(user)
+        db.session.commit()
+
+        return redirect(url_for('.profile',uname=user.username))
+
+    return render_template('profile/update.html',form = form)
