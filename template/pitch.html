@@ -24,3 +24,14 @@
         </a>{{pitch.dislikes}}</span>
 
     </div>
+    <div class="row">
+        <h4>Comments</h4>
+        <hr>
+        {% if current_user.is_authenticated %}
+            {{ wtf.quick_form(comment_form) }}
+        {%endif%}
+        {{macro.displayComments(comments)}}
+    </div>
+
+</div>
+{%endblock%}
