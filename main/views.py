@@ -10,12 +10,12 @@ import datetime
 @main.route('/')
 def index():
 
-    interview_piches = Pitch.get_pitches('interview')
-    product_piches = Pitch.get_pitches('product')
-    promotion_pitches = Pitch.get_pitches('promotion')
+    business = Pitch.get_pitches('business')
+    product = Pitch.get_pitches('product')
+    sport = Pitch.get_pitches('sport')
 
 
-    return render_template('index.html',title = title, interview = interview_piches, product = product_piches, promotion = promotion_pitches)
+    return render_template('index.html', business = business, product = product, sport = sport)
 
 
 @main.route('/posts')
