@@ -83,3 +83,12 @@ def new_pitch():
 
     title = 'New pitch'
     return render_template('new_pitch.html',title = title,pitch_form=pitch_form )
+
+
+
+@main.route('/pitches/business')
+def business():
+
+    pitches = Pitch.get_pitches('business')
+
+    return render_template("business.html", pitches = pitches)
