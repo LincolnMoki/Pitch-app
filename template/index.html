@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+<!-- Styles block -->
+
+{%block styles%}
+    {{ super() }}
+    <link href="https://fonts.googleapis.com/css?family=Ranga" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Upright" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{%endblock%}
+
+{%block content%}
+
+    <h1 style="text-align:center; background-image: url(https://cdn.pixabay.com/photo/2016/01/30/22/04/typewriter-1170657__340.jpg); color:rgb(55, 0, 128);padding:80px;">MY PITCH PROJECT</h1>
+
+<div class="container" style="padding-bottom: 20px;">
+    <a href="{{url_for('main.new_pitch')}}" class="btn btn-success">Create pitch</a>
+</div>
+
+<div class="container" style= "font-family: 'Cormorant Upright', serif;">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="well well-lg">
+                <h3>Sports</h3>
+                <p>Lets talk sports .</p>
+                <a href="{{url_for('main.sports')}}" class="btn btn-primary -center">View</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="well well-lg">
+                <h3>Product </h3>
+                <p>Want to talk about your products, this is the right place to do it .</p>
+                <a href="{{url_for('main.product')}}" class="btn btn-primary -center">View</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="well well-lg">
+                <h3>Business</h3>
+                <p>Think business we got you.</p>
+                <a href="{{url_for('main.business')}}" class="btn btn-primary -center">View</a>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
