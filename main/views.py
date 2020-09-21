@@ -92,3 +92,21 @@ def business():
     pitches = Pitch.get_pitches('business')
 
     return render_template("business.html", pitches = pitches)
+
+
+
+@main.route('/pitches/product')
+def product():
+
+    pitches = Pitch.get_pitches('product')
+
+    return render_template("product.html", pitches = pitches)
+
+
+
+@main.route('/pitches/sport')
+def sport():
+
+    pitches = Pitch.get_pitches('sport')
+
+    return render_template("sport.html", pitches = pitches)
