@@ -18,15 +18,16 @@ def index():
     return render_template('index.html', business = business, product = product, sport = sport)
 
 
-@main.route('/posts')
-@login_required
-def posts():
-    posts = Post.query.all()
-    likes = Upvote.query.all()
-    user = current_user
-    return render_template('pitch_display.html', posts=posts, likes=likes, user=user)
+@main.route('/user/<uname>')
+def profile(uname):
+    user = User.query.filter_by(username = uname).first()
+    pitches_count = Pitch.count_pitches(uname)
+    user_joined = user.date_joined.strftime('%b %d, %Y')
 
+    if user is None:
+        abort(404)
 
+    return render_template("profile/profile.html", user = user,pitches = pitches_count,date = user_joined)
 
 @main.route('/new_post', methods=['GET', 'POST'])
 @login_required
