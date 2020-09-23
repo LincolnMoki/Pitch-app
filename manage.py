@@ -32,7 +32,7 @@ def test():
 
 if __name__ == "__main__":
         manager.run()
-.run(tests)
+run(tests)
 
 @manager.shell
 def make_shell_context():
