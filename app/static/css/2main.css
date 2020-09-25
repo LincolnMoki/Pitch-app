@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    /*background-image: url("https://cdn.pixabay.com/photo/2015/07/27/02/47/skyline-861955_960_720.jpg");*/
+}
+
+
+#particles-js {
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+#navbar{
+background-color: black;
+}

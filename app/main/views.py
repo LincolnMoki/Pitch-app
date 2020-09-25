@@ -11,7 +11,7 @@ import datetime
 def index():
     business = Pitch.get_pitches('business')
     product = Pitch.get_pitches('product')
-    sport = Pitch.get_pitches('sport')
+    sport = Pitch.get_pitches('sports')
 
     return render_template("index.html", business = business, product = product, sports = sports)
 
