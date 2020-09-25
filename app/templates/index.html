@@ -4,15 +4,13 @@
 
 {%block styles%}
     {{ super() }}
-    <link href="https://fonts.googleapis.com/css?family=Ranga" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cormorant+Upright" rel="stylesheet">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/2main.css')}}">
 {%endblock%}
 
 {%block content%}
 
-    <h1 style="text-align:center; background-image: url(https://cdn.pixabay.com/photo/2016/01/30/22/04/typewriter-1170657__340.jpg); color:rgb(55, 0, 128);padding:80px;">MY PITCH PROJECT</h1>
+    <h1 style="text-align:center; background-color: aliceblue; color:rgb(55, 0, 128);padding:80px;">MY PITCH PROJECT</h1>
 
 <div class="container" style="padding-bottom: 20px;">
     <a href="{{url_for('main.new_pitch')}}" class="btn btn-success">Create pitch</a>

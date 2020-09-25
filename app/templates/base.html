@@ -7,5 +7,6 @@
 
 {%block styles %}
   {{super()}}
-  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Ranga" rel="stylesheet">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/2main.css')}}">
 {% endblock %}

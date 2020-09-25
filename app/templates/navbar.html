@@ -1,4 +1,4 @@
-<div class="navbar navbar-dark bg-dark" role="navigation" style="margin-bottom:0; border-bottom: 1px solid;">
+<nav class="navbar navbar-light " role="navigation" style="margin-bottom:0; border-bottom: 1px solid;">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -11,13 +11,12 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="{{url_for('main.sports')}}">sports</a></li>
+                <li><a href="{{url_for('main.sports')}}">Sports</a></li>
                 <li><a href="{{url_for('main.product')}}">Product</a></li>
                 <li><a href="{{url_for('main.business')}}">Business</a></li>
             </ul>
 
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right"> 
                 {% if current_user.is_authenticated %}
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{current_user.username| capitalize}} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -33,4 +32,4 @@
             {%endif%}
         </div>
 </div>
-</div>
+</nav>
