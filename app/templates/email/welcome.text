@@ -1,0 +1,4 @@
+Hello {{user.username}}
+Welcome to  Pitch App
+You have now signed up for the application and can now start sharing your pitches to everyone.
+Good luck.
