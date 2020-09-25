@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+{%block content%}
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Ranga" rel="stylesheet">
+<div class="jumbotron text-center" style="background-color: rgb(26, 25, 24); color:rgb(138, 161, 138) ; padding: 100px 25px; font-family: 'Indie Flower', cursive;">
+    <h1>Sports</h1>
+</div>
+<div class="container" style="font-family: 'Indie+Flower', cursive;">
+    <hr>
+    <div class="row">
+        {{macro.displayPitches(pitches)}}
+    </div>
+</div>
+{%endblock%}

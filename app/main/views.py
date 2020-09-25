@@ -9,13 +9,11 @@ import datetime
 # Views
 @main.route('/')
 def index():
-
     business = Pitch.get_pitches('business')
     product = Pitch.get_pitches('product')
     sport = Pitch.get_pitches('sport')
 
-
-    return render_template('index.html', business = business, product = product, sport = sport)
+    return render_template("index.html", business = business, product = product, sports = sports)
 
 
 @main.route('/user/<uname>')
@@ -104,12 +102,12 @@ def product():
 
 
 
-@main.route('/pitches/sport')
-def sport():
+@main.route('/pitches/sports')
+def sports():
 
-    pitches = Pitch.get_pitches('sport')
+    pitches = Pitch.get_pitches('sports')
 
-    return render_template("sport.html", pitches = pitches)
+    return render_template("sports.html", pitches = pitches)
 
 
 
